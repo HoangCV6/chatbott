@@ -35,6 +35,7 @@ async def get_deepseek_response(user_input: str, history: list = []):
         "temperature": 0.7,
         "max_tokens": 1024
     }
+    
 
     async with httpx.AsyncClient() as client:
         try:
@@ -73,8 +74,9 @@ TIỆN ÍCH THÔNG MINH:
 - MaxDrive-Elite: Động cơ đạt chuẩn EMC, vận hành siêu mượt.
 - Giải trí: Loa Bluetooth vòm, Sạc không dây chuẩn Qi, Màn hình LCD 7 inch.
 - Chất liệu: Da Standard PU cao cấp, kháng khuẩn, chống mốc, phù hợp khí hậu VN.
-- Màn hình LCD: Hiển thị thông tin massage, nhiệt độ, thời gian, chế độ."""
-
+- Màn hình LCD: Hiển thị thông tin massage, nhiệt độ, thời gian, chế độ.
+- Phù hợp: Người già, người đau mỏi, nhân viên văn phòng, người cần thư giãn.
+"""
 SYSTEM_PROMPT = f"""
 Bạn là Chuyên gia Tư vấn Sức khỏe của Toshiko Việt Nam. 
 Hãy sử dụng dữ liệu sau để hỗ trợ khách hàng: {PRODUCT_KNOWLEDGE}
@@ -87,4 +89,5 @@ QUY TẮC ỨNG XỬ:
    - Khi khách hỏi đau mỏi: Giới thiệu khung SL 130cm và nhiệt InfraWarm.
    - Khi khách là người già: Nhấn mạnh SmartVoice AI (dễ dùng, không cần bấm nút).
 4. Câu chốt: Luôn hỏi xem khách có muốn trải nghiệm thử tại showroom gần nhất hoặc tư vấn trả góp không.
+5. Trả lời dự trên thông tin đã cho, có thể suy đoán thêm nhưng không được thêm thông tin sai lệch.
 """
